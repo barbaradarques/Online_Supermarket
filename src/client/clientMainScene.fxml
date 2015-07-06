@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+            prefWidth="800.0" stylesheets="@../flatterfx.css" xmlns="http://javafx.com/javafx/8.0.40"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.ClientMainSceneController">
+    <top>
+        <VBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="31.0" prefWidth="800.0">
+                <Label prefHeight="24.0" prefWidth="279.0" text="Supermercado Online">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="10.0"/>
+                    </HBox.margin>
+                    <padding>
+                        <Insets top="5.0"/>
+                    </padding>
+                </Label>
+                <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="24.0"
+                       prefWidth="481.0" text="Seja bem vindo(a)!" textAlignment="RIGHT">
+                    <HBox.margin>
+                        <Insets left="20.0"/>
+                    </HBox.margin>
+                    <padding>
+                        <Insets top="5.0"/>
+                    </padding>
+                </Label>
+            </HBox>
+            <Separator prefHeight="11.0" prefWidth="800.0"/>
+            <Label alignment="CENTER" text="Produtos">
+                <font>
+                    <Font name="System Bold" size="21.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets left="245.0" right="12.0"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="productsTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="215.0" text="Nome"/>
+                <TableColumn fx:id="priceColumn" prefWidth="94.0" text="Preço (R$)"/>
+                <TableColumn fx:id="expirationColumn" prefWidth="114.0" text="Validade"/>
+                <TableColumn fx:id="supplierColumn" prefWidth="169.0" text="Fornecedor"/>
+            </columns>
+            <BorderPane.margin>
+                <Insets right="10.0" top="5.0"/>
+            </BorderPane.margin>
+        </TableView>
+    </center>
+    <right>
+
+    </right>
+    <left>
+        <fx:define>
+            <ToggleGroup fx:id="toggleGroup"/>
+        </fx:define>
+        <VBox prefHeight="341.0" prefWidth="187.0" spacing="5.0">
+
+            <Label text="Exibir:"/>
+            <RadioButton fx:id="available" text="Produtos Disponíveis" toggleGroup="$toggleGroup"/>
+            <RadioButton fx:id="unavailable" text="Produtos Indisponíveis" toggleGroup="$toggleGroup"/>
+            <RadioButton fx:id="all" text="Todos" toggleGroup="$toggleGroup"/>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+            <padding>
+                <Insets left="10.0" top="10.0"/>
+            </padding>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="64.0" prefWidth="600.0" spacing="10.0"
+              BorderPane.alignment="CENTER">
+            <padding>
+                <Insets right="12.0"/>
+            </padding>
+            <Button fx:id="buyProductButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false"
+                    onAction="#buyProductButtonClicked" prefHeight="30.0" prefWidth="205.0"
+                    text="Comprar produto selecionado" textAlignment="CENTER"/>
+            <TextField fx:id="quantityField" promptText="Quantidade"/>
+        </HBox>
+    </bottom>
+</BorderPane>

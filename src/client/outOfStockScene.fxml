@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox prefHeight="200.0" prefWidth="400.0" stylesheets="@../flatterfx.css" xmlns="http://javafx.com/javafx/8.0.40"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.ClientGeneralController">
+    <padding>
+        <Insets top="25.0"/>
+    </padding>
+    <Label lineSpacing="2.0" prefHeight="79.0" prefWidth="400.0"
+           text="Não temos estoque suficiente para cumprir o seu pedido. Deseja ser notificado(a) por e-mail quando o produto estiver disponível na quantidade desejada?"
+           textAlignment="CENTER" wrapText="true">
+        <padding>
+            <Insets top="20.0"/>
+        </padding>
+    </Label>
+    <HBox alignment="CENTER" prefHeight="56.0" prefWidth="400.0" spacing="15.0">
+        <VBox.margin>
+            <Insets top="10.0"/>
+        </VBox.margin>
+        <Button fx:id="yesButton" mnemonicParsing="false" onAction="#yesButtonClicked" prefHeight="36.0"
+                prefWidth="60.0" text="Sim"/>
+        <Button fx:id="noButton" mnemonicParsing="false" onAction="#noButtonClicked" prefWidth="60.0"
+                text="Não">
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>

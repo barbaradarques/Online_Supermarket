@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0"
+         prefWidth="800.0" stylesheets="@../flatterfx.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="535.0"
+         tabMaxWidth="800.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="server.ServerMainSceneController">
+    <Tab text="Produtos">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="547.0" prefWidth="805.0">
+            <children>
+                <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                            minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0"
+                            stylesheets="@../flatterfx.css">
+                    <top>
+                        <VBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="600.0"
+                              BorderPane.alignment="CENTER">
+                            <children>
+                                <HBox prefHeight="31.0" prefWidth="800.0">
+                                    <children>
+                                        <Label prefHeight="24.0" prefWidth="279.0" text="Supermercado Online">
+                                            <font>
+                                                <Font name="System Bold" size="14.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets top="5.0"/>
+                                            </padding>
+                                        </Label>
+                                        <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0"
+                                               prefHeight="24.0" prefWidth="481.0" text="Servidor"
+                                               textAlignment="RIGHT">
+                                            <HBox.margin>
+                                                <Insets left="20.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets top="5.0"/>
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <Separator prefHeight="11.0" prefWidth="800.0"/>
+                                <Label alignment="CENTER" text="Produtos">
+                                    <font>
+                                        <Font name="System Bold" size="21.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="245.0" right="12.0"/>
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </top>
+                    <center>
+                        <TableView fx:id="productsTable" prefHeight="200.0" prefWidth="200.0"
+                                   BorderPane.alignment="CENTER">
+                            <columns>
+                                <TableColumn fx:id="nameColumn" prefWidth="215.0" text="Nome"/>
+                                <TableColumn fx:id="priceColumn" prefWidth="94.0" text="Preço (R$)"/>
+                                <TableColumn fx:id="stockColumn" prefWidth="70.0" text="Estoque"/>
+                                <TableColumn fx:id="expirationColumn" prefWidth="80.0" text="Validade"/>
+                                <TableColumn fx:id="supplierColumn" prefWidth="169.0" text="Fornecedor"/>
+                            </columns>
+                            <BorderPane.margin>
+                                <Insets right="10.0" top="5.0"/>
+                            </BorderPane.margin>
+                        </TableView>
+                    </center>
+                    <left>
+                        <fx:define>
+                            <ToggleGroup fx:id="toggleGroup"/>
+                        </fx:define>
+                        <VBox prefHeight="341.0" prefWidth="187.0" spacing="5.0">
+
+                            <Label text="Exibir:"/>
+                            <RadioButton fx:id="available" text="Produtos Disponíveis"
+                                         toggleGroup="$toggleGroup"/>
+                            <RadioButton fx:id="unavailable" text="Produtos Indisponíveis"
+                                         toggleGroup="$toggleGroup"/>
+                            <RadioButton fx:id="all" text="Todos" toggleGroup="$toggleGroup"/>
+                            <BorderPane.margin>
+                                <Insets/>
+                            </BorderPane.margin>
+                            <padding>
+                                <Insets left="10.0" top="10.0"/>
+                            </padding>
+                        </VBox>
+                    </left>
+                    <bottom>
+                        <HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="64.0" prefWidth="600.0"
+                              spacing="10.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Button fx:id="registerNewProductButton" onAction="#openNewProductWindow"
+                                        alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false"
+                                        prefHeight="30.0" prefWidth="205.0" text="Cadastrar novo produto"
+                                        textAlignment="CENTER"/>
+                                <Button fx:id="updateStockButton" onAction="#updateStock"
+                                        mnemonicParsing="false"
+                                        text="Atualizar estoque do produto selecionado"/>
+                                <TextField fx:id="quantityField" promptText="Nova quantidade"/>
+                            </children>
+                            <padding>
+                                <Insets right="12.0"/>
+                            </padding>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </Tab>
+    <Tab text="Relatórios">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+                <BorderPane prefHeight="500.0" prefWidth="800.0">
+                    <top>
+                        <VBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="800.0"
+                              BorderPane.alignment="CENTER">
+                            <children>
+                                <HBox prefHeight="31.0" prefWidth="800.0">
+                                    <children>
+                                        <Label prefHeight="24.0" prefWidth="279.0" text="Supermercado Online">
+                                            <font>
+                                                <Font name="System Bold" size="14.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets top="5.0"/>
+                                            </padding>
+                                        </Label>
+                                        <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0"
+                                               prefHeight="24.0" prefWidth="481.0" text="Servidor"
+                                               textAlignment="RIGHT">
+                                            <HBox.margin>
+                                                <Insets left="20.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets top="5.0"/>
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets/>
+                                    </VBox.margin>
+                                </HBox>
+                                <Separator prefHeight="11.0" prefWidth="800.0"/>
+                                <Label alignment="CENTER" text="Relatórios">
+                                    <font>
+                                        <Font name="System Bold" size="21.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="245.0" right="12.0"/>
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </top>
+                    <center>
+                        <VBox alignment="CENTER" prefHeight="498.0" prefWidth="800.0" spacing="30.0"
+                              BorderPane.alignment="CENTER">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#generateMonthPDF"
+                                        text="Gerar relatórios de vendas do mês"/>
+                                <Button mnemonicParsing="false" onAction="#generateDayPDF"
+                                        text="Gerar relatório de vendas do dia"/>
+                            </children>
+                            <padding>
+                                <Insets bottom="50.0"/>
+                            </padding>
+                        </VBox>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </Tab>
+    <Tab text="Data">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+                <BorderPane prefHeight="500.0" prefWidth="800.0">
+                    <center>
+                        <VBox alignment="CENTER" prefHeight="500.0" prefWidth="800.0"
+                              BorderPane.alignment="CENTER">
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="800.0">
+                                    <children>
+                                        <Label prefHeight="49.0" prefWidth="69.0" text="Hoje é dia "/>
+                                        <Label fx:id="todayField" layoutX="10.0" layoutY="10.0"
+                                               prefHeight="49.0" prefWidth="80.0"/>
+                                    </children>
+                                </HBox>
+                                <DatePicker fx:id="datePicker" prefHeight="40.0" prefWidth="258.0"
+                                            promptText="Escolha uma nova data para hoje"/>
+                                <Button fx:id="saveTodayButton" onAction="#changeToday" mnemonicParsing="false"
+                                        text="Salvar">
+                                    <VBox.margin>
+                                        <Insets top="20.0"/>
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets bottom="90.0"/>
+                            </padding>
+                        </VBox>
+                    </center>
+                    <top>
+                        <VBox alignment="CENTER_RIGHT" prefHeight="59.0" prefWidth="800.0"
+                              BorderPane.alignment="CENTER">
+                            <children>
+                                <HBox prefHeight="31.0" prefWidth="800.0">
+                                    <children>
+                                        <Label prefHeight="24.0" prefWidth="279.0" text="Supermercado Online">
+                                            <font>
+                                                <Font name="System Bold" size="14.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets top="5.0"/>
+                                            </padding>
+                                        </Label>
+                                        <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0"
+                                               prefHeight="24.0" prefWidth="481.0" text="Servidor"
+                                               textAlignment="RIGHT">
+                                            <HBox.margin>
+                                                <Insets left="20.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets top="5.0"/>
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets/>
+                                    </VBox.margin>
+                                </HBox>
+                                <Separator prefHeight="11.0" prefWidth="800.0"/>
+                                <Label alignment="CENTER" text="Data">
+                                    <font>
+                                        <Font name="System Bold" size="21.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="245.0" right="12.0"/>
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </top>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </Tab>
+</TabPane>

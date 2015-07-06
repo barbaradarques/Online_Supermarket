@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+            prefWidth="800.0" stylesheets="@../flatterfx.css" xmlns="http://javafx.com/javafx/8.0.40"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.ClientGeneralController">
+    <center>
+        <GridPane alignment="CENTER" prefHeight="142.0" prefWidth="284.0">
+            <columnConstraints>
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="1.0" prefWidth="1.0"/>
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints fillHeight="false" maxHeight="107.0" minHeight="0.0" prefHeight="25.0"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="154.0" minHeight="10.0" prefHeight="129.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <BorderPane.margin>
+                <Insets right="60.0"/>
+            </BorderPane.margin>
+            <Label text="Usuário:" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+                <GridPane.margin>
+                    <Insets bottom="9.0" right="9.0" top="9.0"/>
+                </GridPane.margin>
+            </Label>
+            <Label text="Senha:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                <padding>
+                    <Insets bottom="9.0" right="9.0" top="9.0"/>
+                </padding>
+                <GridPane.margin>
+                    <Insets top="6.0"/>
+                </GridPane.margin>
+            </Label>
+            <TextField fx:id="usernameField" prefHeight="26.0" prefWidth="182.0" promptText="Nome do usuário"
+                       GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+            </TextField>
+            <HBox prefHeight="42.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets top="5.0"/>
+                </GridPane.margin>
+                <Button fx:id="signupButton" mnemonicParsing="false" onAction="#signupButtonClicked"
+                        prefHeight="26.0" prefWidth="115.0" text="Novo Usuário"/>
+                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonClicked"
+                        text="Entrar"/>
+            </HBox>
+            <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="182.0" promptText="Senha do usuário"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+    </center>
+    <top>
+        <Label prefHeight="138.0" prefWidth="303.0" text="Supermercado Online" textAlignment="CENTER" wrapText="true"
+               BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Arial" size="29.0"/>
+            </font>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </Label>
+    </top>
+    <bottom>
+        <Region prefHeight="120.0" prefWidth="600.0" BorderPane.alignment="CENTER"/>
+    </bottom>
+    <right>
+        <Region prefHeight="242.0" prefWidth="54.0" BorderPane.alignment="CENTER"/>
+    </right>
+</BorderPane>
